@@ -1,0 +1,162 @@
+<?php
+session_start();
+
+if (!(isset($_SESSION['Worker_name'])&& isset($_SESSION['Woker_Lastname']))) {
+	echo "all bad";
+}
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>For Worker.</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!------------- Header Section  ------------------>
+  <header class="header">
+    <div class="hero">
+      <nav>
+        <h1 style="color: aliceblue;">For Worker.</h1>
+        <div>
+          <form onsubmit="searchbar(); return false;" class="search-form" >
+            <input type="text" id="search" placeholder="Search...">
+            <button type="submit" style="background-color: burlywood;">Search</button>
+          </form>
+        </div>
+          <!-- <li><a href="index.html" style="color:burlywood;">Home</a></li>
+          <li><a href="#" style="color: burlywood;">Features</a></li> -->
+          <img src="./images/Faraj.jpg" class="user-pic" onclick="toggleMenu()">
+          <div class="sub-menu-wrap" id="subMenu">
+              <div class="sub-menu">
+                  <div class="user-info">
+                      <img src="./images/Faraj.jpg">
+                      <h2>
+                        <?php echo ($_SESSION['Worker_name'] . " " . $_SESSION['Woker_Lastname']);?>
+                      </h2>
+                  </div>
+                  <hr>
+                  <a href="edit-profile.html" class="sub-menu-link">
+                      <img src="./images/profile.png" alt="">
+                      <p>Edit Profile</p>
+                      <span></span>
+                  </a>
+                  <a href="#" class="sub-menu-link">
+                      <img src="./images/setting.png" alt="">
+                      <p>Settings & Privacy</p>
+                      <span></span>
+                  </a>
+                  <a href="#" class="sub-menu-link">
+                      <img src="./images/help.png" alt="">
+                      <p>Help & Support</p>
+                      <span></span>
+                  </a>
+                  <a href="Log-in.html" class="sub-menu-link">
+                      <img src="./images/logout.png" alt="">
+                      <p>Log-Out</p>
+                      <span></span>
+                  </a>
+              </div>
+          </div>
+      </nav>
+  </div>
+  </header>
+
+  <main class="main">
+    <div class = "row">
+      <table id ="tbl1">
+        <tr>
+          <td>
+            <div class="card" style="width: 22rem;" >
+              <img src="./images/Home.jpg" class="card-img-top">
+              <div class="card-body">
+                  <h5 class="card-title">FOR HOUSE</h5>
+                  <p class="card-text">Buying and repairs for your house</p>
+                  <a href="houses.html" class="btn btn-primary" style="color:rgb(134, 34, 34);">Go to Houses</a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="card" style="width: 22rem;" >
+              <img src="./images/Garden.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">FOR YARD</h5>
+                <p class="card-text">Reapirs for yard, pool and more </p>
+                <a href="yard.html" class="btn btn-primary" style="color:rgb(134, 34, 34);">Go To Yard</a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="card" style="width: 22rem;" >
+              <img src="./images/Cars.jpg" class="card-img-top" >
+              <div class="card-body">
+                <h5 class="card-title">FOR CAR</h5>
+                <p class="card-text">Fixes, repairs for Cars and more</p>
+                <a href="car.html" class="btn btn-primary" style="color:rgb(134, 34, 34);">Go To Car</a>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="card" style="width: 22rem;" >
+              <img src="./images/Constructions.webp" class="card-img-top" >
+              <div class="card-body">
+                  <h5 class="card-title">FOR CONSTRUCTIONS </h5>
+                  <p class="card-text">Constructions for house, offices and more</p>
+                  <a href="construction.html" class="btn btn-primary" style="color:rgb(134, 34, 34);">Go To Constructions</a>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="card" style="width: 22rem;" >
+              <img src="./images/Tech.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">FOR TECH</h5>
+                <p class="card-text">Repairs, fixes for phone and more</p>
+                <a href="tech.html" class="btn btn-primary" style="color:rgb(134, 34, 34);">Go To Tech</a>
+              </div>
+            </div>
+          </td>
+        <td>
+          <div class="card" style="width: 22rem;" >
+            <img src="./images/coming-soon.webp" class="card-img-top">
+            <div class="card-body">
+              <h5 class="card-title">Coming Soon</h5>
+              <p class="card-text">Coming Soon</p>
+              <a href="#" class="btn btn-primary" style="color:rgb(134, 34, 34);">Coming Soon :D</a>
+            </div>
+          </div>
+        </td>
+        </tr>
+    </table>
+  </div>
+  </main>
+  
+  <footer>
+    <nav style="justify-content:space-evenly;">
+      <li><a href="about.html" style="color:burlywood;" >About</a></li>
+      <li><a href="#" style="color: burlywood;">Contact</a></li>
+    </nav>
+  </footer>
+  <!-- add javascript  file  -->
+  <!--<script src="./js/app.js"></script>-->
+  <script src="./ScriptFunc.js"></script>
+
+
+
+</body>
+</html>
